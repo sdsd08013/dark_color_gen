@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#372441</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#e1e1e1</color>
+
+    <color name="colorIcon">#bfa4cd</color>
+    <color name="colorBorderLight">#bfa4cd</color>
+    <color name="colorBackgroundLight">#e1e1e1</color>
+    <color name="colorBackgroundLightGray">#c0c0c0</color>
+    <color name="colorBackgroundLightYellow">#fde482</color>
+
+    <color name="colorText">#80499c</color>
+    <color name="colorTitleText">#372441</color>
+    <color name="colorTimeText">#a29d83</color>
+    <color name="colorHintText">#9c9c9c</color>
+    <color name="colorLightGrayText">#bcbcbc</color>
+    <color name="colorDarkGrayText">#6d6d6d</color>
+    <color name="colorHintTextControl">#bfa4cd</color>
+    <color name="colorLinkYellow">#ffb619</color>
+    <color name="colorLinkBlue">#00a0e9</color>
+    <color name="colorLinkRed">#fe304d</color>
+    <color name="colorLabelPurple">#6B338A</color>
+
+    <color name="colorButtonYellow">#ffb619</color>
+    <color name="colorButtonYellowRipple">#FFE2B7</color>
+    <color name="colorShadowYellow">#d19207</color>
+    <color name="colorButtonPurple">#9078be</color>
+    <color name="colorShadowPurple">#514478</color>
+    <color name="colorButtonRed">#fe304d</color>
+    <color name="colorButtonRedRipple">#EDD1D1</color>
+    <color name="colorShadowRed">#890c21</color>
+    <color name="colorButtonBlue">#00a0e9</color>
+    <color name="colorShadowBlue">#006b9b</color>
+    <color name="colorButtonDisabled">#7f7f80</color>
+    <color name="colorShadowDisabled">#434344</color>
+    <color name="colorTextDisabled">#434344</color>
+
+    <color name="colorUnderlineDark">#777777</color>
+    <color name="colorSelected">#372441</color>
+    <color name="alertBackground">#fef7d0</color>
+
+    <color name="colorBlackFilter">#7f000000</color>
+    <color name="colorBlackOverlay">#4D000000</color>
+    <color name="colorRipple">#666666</color>
+</resources>
