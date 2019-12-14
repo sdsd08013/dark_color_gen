@@ -3,17 +3,19 @@
 #include <cmath>
 #include <algorithm>
 
-#include "SkCanvas.h"
-#include "SkData.h"
-#include "SkEncodedImageFormat.h"
-#include "SkImage.h"
-#include "SkPaint.h"
-#include "SkSurface.h"
+#include <SkCanvas.h>
+#include <SkData.h>
+#include <SkEncodedImageFormat.h>
+#include <SkImage.h>
+#include <SkPaint.h>
+#include <SkSurface.h>
 
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 #include <boost/foreach.hpp>
 #include <boost/lexical_cast.hpp>
+
+#include <sys/types.h>
 
 using namespace boost::property_tree;
 using namespace std;

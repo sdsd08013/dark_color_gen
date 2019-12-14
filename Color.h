@@ -2,9 +2,9 @@
 #define COLOR_H
 #include <math.h>
 #include "PixelFormat.h"
-#include <SkColor.h>
-#include <SkColorSpace.h>
-#include <SkImageInfo.h>
+#include "SkColor.h"
+#include "SkColorSpace.h"
+#include "SkImageInfo.h"
 struct Lab {
     float L;
     float a;
