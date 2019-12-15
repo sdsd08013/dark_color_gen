@@ -22,8 +22,11 @@
 #include <cmath>
 #include "system/graphics.h"
 
-namespace android {
-namespace uirenderer {
+#include <string>
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+
 
 android::PixelFormat ColorTypeToPixelFormat(SkColorType colorType) {
     switch (colorType) {
@@ -201,7 +204,3 @@ SkColor LabToSRGB(const Lab& lab, SkAlpha alpha) {
             static_cast<uint8_t>(rgb.g * 255),
             static_cast<uint8_t>(rgb.b * 255));
 }
-
-}  // namespace uirenderer
-}  // namespace android
-

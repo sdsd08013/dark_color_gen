@@ -13,4 +13,3 @@ struct Lab {
 Lab sRGBToLab(SkColor color);
 SkColor LabToSRGB(const Lab& lab, SkAlpha alpha);
 #endif /* COLOR_H */
-

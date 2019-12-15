@@ -3,12 +3,12 @@
 #include <cmath>
 #include <algorithm>
 
-#include <SkCanvas.h>
-#include <SkData.h>
-#include <SkEncodedImageFormat.h>
-#include <SkImage.h>
-#include <SkPaint.h>
-#include <SkSurface.h>
+#include "SkCanvas.h"
+#include "SkData.h"
+#include "SkEncodedImageFormat.h"
+#include "SkImage.h"
+#include "SkPaint.h"
+#include "SkSurface.h"
 
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
