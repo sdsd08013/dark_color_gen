@@ -9,8 +9,9 @@
 #include "SkImage.h"
 #include "SkPaint.h"
 #include "SkSurface.h"
+#include "SkColorSpace.h"
 
-//#include "test.h"
+#include "transform.h"
 
 int main() {
   //cout << SkColorGetR(SkColorSetARGB(0x80, 0xFF, 0xFF, 0x00)) << endl;
@@ -23,11 +24,11 @@ int main() {
 
   SkColor b = SK_ColorBLUE;
 
-  SkColorSpace::MakeSRGB();
+  //SkColorSpace::MakeSRGB();
   //android::uirenderer::sRGBToLab(SK_ColorBLUE);
-  //android::uirenderer::makeDark(b);
+  SkColor dc = android::uirenderer::makeDark(b);
   //android::ColorSpace::test();
-  //std::cout << cs.getName() << std::endl;
+  std::cout << SkColorGetA(dc) << std::endl;
 
   return 0;
  
