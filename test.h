@@ -1,9 +1,9 @@
 
 #include "Color.h"
 
-namespace android{
+namespace android {
 namespace uirenderer {
-  void test();
-  SkColor makeDark(SkColor color);
+void test();
+SkColor makeDark(SkColor color);
 }
 }

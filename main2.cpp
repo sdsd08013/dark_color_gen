@@ -10,7 +10,7 @@
 #include "SkPaint.h"
 #include "SkSurface.h"
 
-#include "test.h"
+//#include "test.h"
 
 int main() {
   //cout << SkColorGetR(SkColorSetARGB(0x80, 0xFF, 0xFF, 0x00)) << endl;
@@ -23,8 +23,7 @@ int main() {
 
   SkColor b = SK_ColorBLUE;
 
-  android::uirenderer::test();
-  android::uirenderer::makeDark(SK_ColorBLUE);
+  SkColorSpace::MakeSRGB();
   //android::uirenderer::sRGBToLab(SK_ColorBLUE);
   //android::uirenderer::makeDark(b);
   //android::ColorSpace::test();

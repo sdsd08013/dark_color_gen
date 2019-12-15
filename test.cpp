@@ -9,7 +9,6 @@
 
 namespace android {
 namespace uirenderer {
-
 SkColor makeDark(SkColor color) {
     Lab lab = sRGBToLab(color);
     float invertedL = std::min(110 - lab.L, 100.0f);
@@ -25,4 +24,3 @@ void test() {
 }
 }
 }
-
