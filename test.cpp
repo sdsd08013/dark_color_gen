@@ -5,11 +5,12 @@
 #include <cmath>
 #include <algorithm>
 
+#include "Color.h"
+
 namespace android {
 namespace uirenderer {
 
-  /*
-static SkColor makeDark(SkColor color) {
+SkColor makeDark(SkColor color) {
     Lab lab = sRGBToLab(color);
     float invertedL = std::min(110 - lab.L, 100.0f);
     if (invertedL < lab.L) {
@@ -19,7 +20,6 @@ static SkColor makeDark(SkColor color) {
         return color;
     }
 }
-*/
 void test() {
   std::cout << "========" << std::endl;
 }

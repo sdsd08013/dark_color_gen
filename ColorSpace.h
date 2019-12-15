@@ -230,6 +230,7 @@ public:
         return float3{(xyY.x * xyY.z) / xyY.y, xyY.z, ((1 - xyY.x - xyY.y) * xyY.z) / xyY.y};
     }
 
+    static const void test() {};
     static const ColorSpace sRGB();
     static const ColorSpace linearSRGB();
     static const ColorSpace extendedSRGB();

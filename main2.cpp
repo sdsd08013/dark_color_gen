@@ -23,8 +23,12 @@ int main() {
 
   SkColor b = SK_ColorBLUE;
 
-  //android::uirenderer::makeDark(b);
   android::uirenderer::test();
+  android::uirenderer::makeDark(SK_ColorBLUE);
+  //android::uirenderer::sRGBToLab(SK_ColorBLUE);
+  //android::uirenderer::makeDark(b);
+  //android::ColorSpace::test();
+  //std::cout << cs.getName() << std::endl;
 
   return 0;
  

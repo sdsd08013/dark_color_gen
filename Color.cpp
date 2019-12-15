@@ -25,33 +25,36 @@
 #include <string>
 #include <iostream>
 
+namespace android {
+namespace uirenderer {
+
 android::PixelFormat ColorTypeToPixelFormat(SkColorType colorType) {
     switch (colorType) {
         case kRGBA_8888_SkColorType:
-            return android::PIXEL_FORMAT_RGBA_8888;
+            return PIXEL_FORMAT_RGBA_8888;
         case kRGBA_F16_SkColorType:
-            return android::PIXEL_FORMAT_RGBA_FP16;
+            return PIXEL_FORMAT_RGBA_FP16;
         case kRGB_565_SkColorType:
-            return android::PIXEL_FORMAT_RGB_565;
+            return PIXEL_FORMAT_RGB_565;
         case kRGB_888x_SkColorType:
-            return android::PIXEL_FORMAT_RGBX_8888;
+            return PIXEL_FORMAT_RGBX_8888;
         case kRGBA_1010102_SkColorType:
-            return android::PIXEL_FORMAT_RGBA_1010102;
+            return PIXEL_FORMAT_RGBA_1010102;
         case kARGB_4444_SkColorType:
-            return android::PIXEL_FORMAT_RGBA_4444;
+            return PIXEL_FORMAT_RGBA_4444;
         default:
-            return android::PIXEL_FORMAT_RGBA_8888;
+            return PIXEL_FORMAT_RGBA_8888;
     }
 }
 
 SkColorType PixelFormatToColorType(android::PixelFormat format) {
     switch (format) {
-      case android::PIXEL_FORMAT_RGBX_8888:    return kRGB_888x_SkColorType;
-      case android::PIXEL_FORMAT_RGBA_8888:    return kRGBA_8888_SkColorType;
-      case android::PIXEL_FORMAT_RGBA_FP16:    return kRGBA_F16_SkColorType;
-      case android::PIXEL_FORMAT_RGB_565:      return kRGB_565_SkColorType;
-      case android::PIXEL_FORMAT_RGBA_1010102: return kRGBA_1010102_SkColorType;
-      case android::PIXEL_FORMAT_RGBA_4444:    return kARGB_4444_SkColorType;
+        case PIXEL_FORMAT_RGBX_8888:    return kRGB_888x_SkColorType;
+        case PIXEL_FORMAT_RGBA_8888:    return kRGBA_8888_SkColorType;
+        case PIXEL_FORMAT_RGBA_FP16:    return kRGBA_F16_SkColorType;
+        case PIXEL_FORMAT_RGB_565:      return kRGB_565_SkColorType;
+        case PIXEL_FORMAT_RGBA_1010102: return kRGBA_1010102_SkColorType;
+        case PIXEL_FORMAT_RGBA_4444:    return kARGB_4444_SkColorType;
         default:
             return kUnknown_SkColorType;
     }
@@ -116,17 +119,17 @@ static constexpr T clamp(T x, T min, T max) {
 }
 
 //static const float2 ILLUMINANT_D50_XY = {0.34567f, 0.35850f};
-static const android::float3 ILLUMINANT_D50_XYZ = {0.964212f, 1.0f, 0.825188f};
-static const android::mat3 BRADFORD = android::mat3{
-  android::float3{ 0.8951f, -0.7502f,  0.0389f},
-        android::float3{ 0.2664f,  1.7135f, -0.0685f},
-        android::float3{-0.1614f,  0.0367f,  1.0296f}
+static const float3 ILLUMINANT_D50_XYZ = {0.964212f, 1.0f, 0.825188f};
+static const mat3 BRADFORD = mat3{
+        float3{ 0.8951f, -0.7502f,  0.0389f},
+        float3{ 0.2664f,  1.7135f, -0.0685f},
+        float3{-0.1614f,  0.0367f,  1.0296f}
 };
 
-static android::mat3 adaptation(const android::mat3& matrix, const android::float3& srcWhitePoint, const android::float3& dstWhitePoint) {
-  android::float3 srcLMS = matrix * srcWhitePoint;
-  android::float3 dstLMS = matrix * dstWhitePoint;
-    return inverse(matrix) * android::mat3{dstLMS / srcLMS} * matrix;
+static mat3 adaptation(const mat3& matrix, const float3& srcWhitePoint, const float3& dstWhitePoint) {
+    float3 srcLMS = matrix * srcWhitePoint;
+    float3 dstLMS = matrix * dstWhitePoint;
+    return inverse(matrix) * mat3{dstLMS / srcLMS} * matrix;
 }
 
 namespace LabColorSpace {
@@ -136,11 +139,11 @@ static constexpr float B = 841.0f / 108.0f;
 static constexpr float C = 4.0f / 29.0f;
 static constexpr float D = 6.0f / 29.0f;
 
-android::float3 toXyz(const android::uirenderer::Lab& lab) {
-  android::float3 v { lab.L, lab.a, lab.b };
-    v[0] = android::clamp(v[0], 0.0f, 100.0f);
-    v[1] = android::clamp(v[1], -128.0f, 128.0f);
-    v[2] = android::clamp(v[2], -128.0f, 128.0f);
+float3 toXyz(const Lab& lab) {
+    float3 v { lab.L, lab.a, lab.b };
+    v[0] = clamp(v[0], 0.0f, 100.0f);
+    v[1] = clamp(v[1], -128.0f, 128.0f);
+    v[2] = clamp(v[2], -128.0f, 128.0f);
 
     float fy = (v[0] + 16.0f) / 116.0f;
     float fx = fy + (v[1] * 0.002f);
@@ -156,7 +159,7 @@ android::float3 toXyz(const android::uirenderer::Lab& lab) {
     return v;
 }
 
-android::uirenderer::Lab fromXyz(const android::float3& v) {
+Lab fromXyz(const float3& v) {
     float X = v[0] / ILLUMINANT_D50_XYZ[0];
     float Y = v[1] / ILLUMINANT_D50_XYZ[1];
     float Z = v[2] / ILLUMINANT_D50_XYZ[2];
@@ -169,35 +172,39 @@ android::uirenderer::Lab fromXyz(const android::float3& v) {
     float a = 500.0f * (fx - fy);
     float b = 200.0f * (fy - fz);
 
-    return android::uirenderer::Lab {
-      android::clamp(L, 0.0f, 100.0f),
-            android::clamp(a, -128.0f, 128.0f),
-            android::clamp(b, -128.0f, 128.0f)
+    return Lab {
+            clamp(L, 0.0f, 100.0f),
+            clamp(a, -128.0f, 128.0f),
+            clamp(b, -128.0f, 128.0f)
     };
 }
 
 };
 
-android::uirenderer::Lab sRGBToLab(SkColor color) {
-    auto colorSpace = android::ColorSpace::sRGB();
-    android::float3 rgb;
+Lab sRGBToLab(SkColor color) {
+    auto colorSpace = ColorSpace::sRGB();
+    float3 rgb;
     rgb.r = SkColorGetR(color) / 255.0f;
     rgb.g = SkColorGetG(color) / 255.0f;
     rgb.b = SkColorGetB(color) / 255.0f;
-    android::float3 xyz = colorSpace.rgbToXYZ(rgb);
-    android::float3 srcXYZ = android::ColorSpace::XYZ(android::float3{colorSpace.getWhitePoint(), 1});
+    float3 xyz = colorSpace.rgbToXYZ(rgb);
+    float3 srcXYZ = ColorSpace::XYZ(float3{colorSpace.getWhitePoint(), 1});
     xyz = adaptation(BRADFORD, srcXYZ, ILLUMINANT_D50_XYZ) * xyz;
     return LabColorSpace::fromXyz(xyz);
 }
 
-SkColor LabToSRGB(const android::uirenderer::Lab& lab, SkAlpha alpha) {
-    auto colorSpace = android::ColorSpace::sRGB();
-    android::float3 xyz = LabColorSpace::toXyz(lab);
-    android::float3 dstXYZ = android::ColorSpace::XYZ(android::float3{colorSpace.getWhitePoint(), 1});
+SkColor LabToSRGB(const Lab& lab, SkAlpha alpha) {
+    auto colorSpace = ColorSpace::sRGB();
+    float3 xyz = LabColorSpace::toXyz(lab);
+    float3 dstXYZ = ColorSpace::XYZ(float3{colorSpace.getWhitePoint(), 1});
     xyz = adaptation(BRADFORD, ILLUMINANT_D50_XYZ, dstXYZ) * xyz;
-    android::float3 rgb = colorSpace.xyzToRGB(xyz);
+    float3 rgb = colorSpace.xyzToRGB(xyz);
     return SkColorSetARGB(alpha,
             static_cast<uint8_t>(rgb.r * 255),
             static_cast<uint8_t>(rgb.g * 255),
             static_cast<uint8_t>(rgb.b * 255));
 }
+
+}  // namespace uirenderer
+}  // namespace android
+
