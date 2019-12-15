@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-                        <color name="primary">#eb00ba</color>
-                        <color name="primary_dark">#ec009e</color>
-                        <color name="accent">#f5007c</color>
+                        <color name="primary">#593800</color>
+                        <color name="primary_dark">#793c00</color>
+                        <color name="accent">#b24400</color>
                         <color name="window_background">#242424</color>
-                        <color name="day_header_text_color">#d711a6</color>
+                        <color name="day_header_text_color">#795400</color>
                         <color name="app_bar_text_color">#1b1b1b</color>
                         <color name="card_background_color">#1b1b1b</color>
-                        <color name="current_card_background_color">#342231</color>
+                        <color name="current_card_background_color">#221f11</color>
                         <color name="sub_icon_color">#8a0000</color>
                         <color name="circle_button_background">#212121</color>
-                        <color name="highlight_text">#d300c3</color>
+                        <color name="highlight_text">#372b00</color>
                         <color name="divider_background">#2a2a2a</color>
-                        <color name="recents_background">#b80f8e</color>
-                        <color name="sponsor_platinum">#1d201f</color>
-                        <color name="sponsor_gold">#392335</color>
+                        <color name="recents_background">#916b00</color>
+                        <color name="sponsor_platinum">#1e2122</color>
+                        <color name="sponsor_gold">#23200e</color>
                         <color name="sponsor_silver">#1e1e1e</color>
                         <color name="sponsor_supporter">#1b1b1b</color>
                         <color name="sponsor_technical_for_network">#1b1b1b</color>

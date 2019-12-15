@@ -37,8 +37,8 @@ int main() {
       const char* const bs = l.substr(5,2).c_str();
 
       unsigned int r = strtol(rs, NULL, 16);
-      unsigned int g = strtol(bs, NULL, 16);
-      unsigned int b = strtol(gs, NULL, 16);
+      unsigned int g = strtol(gs, NULL, 16);
+      unsigned int b = strtol(bs, NULL, 16);
 
       unsigned int nr = (SkColorGetR(android::uirenderer::makeDark(SkColorSetRGB(r, g, b))));
       unsigned int ng = (SkColorGetG(android::uirenderer::makeDark(SkColorSetRGB(r, g, b))));
