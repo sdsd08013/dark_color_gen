@@ -1,46 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#372441</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#e1e1e1</color>
-
-    <color name="colorIcon">#bfa4cd</color>
-    <color name="colorBorderLight">#bfa4cd</color>
-    <color name="colorBackgroundLight">#e1e1e1</color>
-    <color name="colorBackgroundLightGray">#c0c0c0</color>
-    <color name="colorBackgroundLightYellow">#fde482</color>
-
-    <color name="colorText">#80499c</color>
-    <color name="colorTitleText">#372441</color>
-    <color name="colorTimeText">#a29d83</color>
-    <color name="colorHintText">#9c9c9c</color>
-    <color name="colorLightGrayText">#bcbcbc</color>
-    <color name="colorDarkGrayText">#6d6d6d</color>
-    <color name="colorHintTextControl">#bfa4cd</color>
-    <color name="colorLinkYellow">#ffb619</color>
-    <color name="colorLinkBlue">#00a0e9</color>
-    <color name="colorLinkRed">#fe304d</color>
-    <color name="colorLabelPurple">#6B338A</color>
-
-    <color name="colorButtonYellow">#ffb619</color>
-    <color name="colorButtonYellowRipple">#FFE2B7</color>
-    <color name="colorShadowYellow">#d19207</color>
-    <color name="colorButtonPurple">#9078be</color>
-    <color name="colorShadowPurple">#514478</color>
-    <color name="colorButtonRed">#fe304d</color>
-    <color name="colorButtonRedRipple">#EDD1D1</color>
-    <color name="colorShadowRed">#890c21</color>
-    <color name="colorButtonBlue">#00a0e9</color>
-    <color name="colorShadowBlue">#006b9b</color>
-    <color name="colorButtonDisabled">#7f7f80</color>
-    <color name="colorShadowDisabled">#434344</color>
-    <color name="colorTextDisabled">#434344</color>
-
-    <color name="colorUnderlineDark">#777777</color>
-    <color name="colorSelected">#372441</color>
-    <color name="alertBackground">#fef7d0</color>
-
-    <color name="colorBlackFilter">#7f000000</color>
-    <color name="colorBlackOverlay">#4D000000</color>
-    <color name="colorRipple">#666666</color>
+    <color name="primary">#FBC812</color>
+    <color name="primary_dark">#FEAD22</color>
+    <color name="accent">#F57C00</color>
+    <color name="window_background">#f2f2f2</color>
+    <color name="day_header_text_color">#d7a611</color>
+    <color name="app_bar_text_color">#FFFFFF</color>
+    <color name="card_background_color">#FFFFFF</color>
+    <color name="current_card_background_color">#fff9e6</color>
+    <color name="sub_icon_color">#8a0000</color>
+    <color name="circle_button_background">#f6f6f6</color>
+    <color name="highlight_text">#FFEB3B</color>
+    <color name="divider_background">#eaeaea</color>
+    <color name="recents_background">#B88E0F</color>
+    <color name="sponsor_platinum">#f5f8fa</color>
+    <color name="sponsor_gold">#fff8e1</color>
+    <color name="sponsor_silver">#fafafa</color>
+    <color name="sponsor_supporter">#ffffff</color>
+    <color name="sponsor_technical_for_network">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="item_header_background">#f5f5f5</color>
+    <color name="drawer_item_icon_tint">#666666</color>
+    <color name="drawer_item_text_color">#222222</color>
+    <color name="button_ripple">#400000</color>
 </resources>

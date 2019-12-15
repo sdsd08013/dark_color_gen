@@ -16,6 +16,7 @@
 #include <boost/property_tree/xml_parser.hpp>
 #include <boost/foreach.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/format.hpp>
 
 using namespace boost::property_tree;
 using namespace std;
@@ -35,15 +36,19 @@ int main() {
       const char* const gs = l.substr(3,2).c_str();
       const char* const bs = l.substr(5,2).c_str();
 
-      double r = strtol(rs, NULL, 16);
-      double g = strtol(bs, NULL, 16);
-      double b = strtol(gs, NULL, 16);
+      unsigned int r = strtol(rs, NULL, 16);
+      unsigned int g = strtol(bs, NULL, 16);
+      unsigned int b = strtol(gs, NULL, 16);
 
-      string nr = to_string(SkColorGetR(android::uirenderer::makeDark(SkColorSetRGB(r, g, b))));
-      string ng = to_string(SkColorGetG(android::uirenderer::makeDark(SkColorSetRGB(r, g, b))));
-      string nb = to_string(SkColorGetB(android::uirenderer::makeDark(SkColorSetRGB(r, g, b))));
+      unsigned int nr = (SkColorGetR(android::uirenderer::makeDark(SkColorSetRGB(r, g, b))));
+      unsigned int ng = (SkColorGetG(android::uirenderer::makeDark(SkColorSetRGB(r, g, b))));
+      unsigned int nb = (SkColorGetB(android::uirenderer::makeDark(SkColorSetRGB(r, g, b))));
 
-      ptree& color = root.add("color", "#" + nr + ng + nb);
+      string snr =  (boost::format("%1$02x") % nr).str();
+      string sng =  (boost::format("%1$02x") % ng).str();
+      string snb =  (boost::format("%1$02x") % nb).str();
+
+      ptree& color = root.add("color", "#" + snr + sng + snb);
       color.put("<xmlattr>.name", name);
 
       count++;
